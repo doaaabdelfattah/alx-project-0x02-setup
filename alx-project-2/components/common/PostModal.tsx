@@ -19,8 +19,11 @@ const PostModal: React.FC<PostModalProps> = ({ onClose, onSave, isOpen }) => {
         <h2 className="text-3xl font-semibold py-2">Create new post</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Title</label>
+            <label htmlFor="title" className="block text-gray-700 mb-2">
+              Title
+            </label>
             <input
+              name="title"
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
