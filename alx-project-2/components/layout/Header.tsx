@@ -11,6 +11,9 @@ const Header = () => {
         <li className="hover:text-red-300">
           <Link href="/about">About</Link>
         </li>
+        <li className="hover:text-red-300">
+          <Link href="/posts">Posts</Link>
+        </li>
       </ul>
     </nav>
   );
