@@ -2,22 +2,26 @@
 import PostCard from "@/components/common/PostCard";
 import Header from "@/components/layout/Header";
 import React from "react";
-import { useState, useEffect } from "react";
-const Posts = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
+export async function getStaticProps() {
+  // Fetching data during build time
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No profile data</p>;
+  return {
+    props: {
+      posts: data, // Pass the fetched data as props
+    },
+  };
+}
+
+const Posts = ({
+  posts,
+}: {
+  posts: Array<{ id: number; title: string; body: string; userId: number }>;
+}) => {
+  if (!posts || posts.length === 0) return <p>No posts available.</p>;
+
   return (
     <>
       <Header />
@@ -25,7 +29,7 @@ const Posts = () => {
         All Posts
       </h1>
       <div className="grid grid-cols-4 gap-8 w-[85%] mx-auto">
-        {data.map((post) => (
+        {posts.map((post) => (
           <PostCard
             title={post.title}
             body={post.body}
