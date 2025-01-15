@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "@/components/common/Card";
-import { CardProps } from "@/interfaces";
+// import { CardProps } from "@/interfaces";
+import type { CardProps } from "@/interfaces";
 const home = () => {
   return (
     <div>
