@@ -1,5 +1,6 @@
 "use-client";
 import PostCard from "@/components/common/PostCard";
+import Header from "@/components/layout/Header";
 import React from "react";
 import { useState, useEffect } from "react";
 const Posts = () => {
