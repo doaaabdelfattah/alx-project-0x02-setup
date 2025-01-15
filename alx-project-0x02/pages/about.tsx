@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 const AboutPage: React.FC = () => {
   return (
     <div className="p-6">
+      <Header />
       <h1 className="text-2xl font-bold mb-4">About Page</h1>
 
       <div className="space-x-10">

@@ -20,6 +20,7 @@ const Posts = () => {
   if (!data) return <p>No profile data</p>;
   return (
     <>
+      <Header />
       <h1 className="text-5xl font-semibold text-center my-10 text-orange-800">
         All Posts
       </h1>
