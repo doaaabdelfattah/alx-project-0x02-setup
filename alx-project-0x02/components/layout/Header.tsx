@@ -10,7 +10,7 @@ const Header = () => {
       <nav className="my-5 bg-slate-100 w-[85%] mx-auto">
         <ul className="flex justify-around items-center p-4 no-underline ">
           <li className="hover:text-red-300">
-            <Link href="/">Home</Link>
+            <Link href="/home">Home</Link>
           </li>
           <li className="hover:text-red-300">
             <Link href="/about">About</Link>
